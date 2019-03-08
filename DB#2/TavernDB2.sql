@@ -185,3 +185,10 @@ INSERT INTO TavernReceived( SupplyID,TavernReceiveAmount,TavernReceiveCost,Taver
     VALUES(1, 100.50, 200.50, 1),(1, 120.50, 200.50, 1),(3, 120.50, 300.50, 3),(3, 100.50, 20.50, 3),(1, 102.50, 220.50, 3),(3, 100.50, 250.50, 4);
 SELECT * FROM TavernReceived;
 
+
+-- Alert Tables
+
+ALTER TABLE Taverns ADD TavernOwnerName VARCHAR(255);
+ALTER TABLE Taverns ADD TavernFloors INT;
+ALTER TABLE Supplies ADD SuppliesFK INT;
+ALTER TABLE Supplies ADD FOREIGN KEY(SuppliesFK) REFERENCES TavernLocation(LocationID);
